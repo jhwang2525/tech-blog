@@ -50,4 +50,4 @@
 
 ![alt text](https://github.com/jhwang2525/tech-blog/blob/main/example/tech-blog.JPG?raw=true)
 ## Deployed Application Link
-https://jhwang2525.github.io/tech-blog/
+https://techblog13.herokuapp.com/
