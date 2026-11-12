@@ -1,0 +1,7 @@
+<article class="card dash-row">
+  <div>
+    <h3 class="dash-title"><a href="/post/{{id}}">{{title}}</a></h3>
+    <p class="muted">{{format_date created_at}} · {{comments.length}} {{pluralize comments.length "comment"}}</p>
+  </div>
+  <a class="btn btn-ghost btn-sm" href="/dashboard/edit/{{id}}">Edit</a>
+</article>

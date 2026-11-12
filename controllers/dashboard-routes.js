@@ -74,8 +74,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 })
-router.get('/new', (req, res) => {
-    res.render('new-post');
+router.get('/new', withAuth, (req, res) => {
+    res.render('new-post', { loggedIn: true });
 });
 
 
