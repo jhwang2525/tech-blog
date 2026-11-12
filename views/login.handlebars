@@ -1,15 +1,16 @@
- <div class="card">
-      <h3 class="card-header">Login</h3>
-      <form id="login-form" class="card-body">
-        <label class="form-label" for="username-login">Username</label>
-        <input  id="username-login" type="text" autofocus="true" class="form-input" />
+<form id="login-form" class="card form auth">
+  <h1 class="form-title">Welcome back</h1>
+  <p class="muted">Log in to write posts and join the discussion.</p>
 
-        <label class="form-label" for="password-login">Password</label>
-        <input id="password-login" type="password" autofocus="true" class="form-input" />
+  <label class="form-label" for="username-login">Username</label>
+  <input id="username-login" type="text" autocomplete="username" autofocus class="form-input" required />
 
-        <button type="submit" class="btn">Login!</button>
-        <a class="login-link" href="/signup">Sign up</a>
-      </form>
-    </div>
-    
+  <label class="form-label" for="password-login">Password</label>
+  <input id="password-login" type="password" autocomplete="current-password" class="form-input" required />
+
+  <p class="form-error" id="form-error" role="alert"></p>
+  <button type="submit" class="btn btn-block">Log in</button>
+  <p class="muted center">New here? <a href="/signup">Create an account</a></p>
+</form>
+
 <script src="/javascript/login.js"></script>
