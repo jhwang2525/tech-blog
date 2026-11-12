@@ -1,7 +1,18 @@
-<article class="post">
+<section class="page-hero">
+  <p class="eyebrow">Latest posts</p>
+  <h1>Notes on building for the web</h1>
+  <p class="lead">Developers sharing what they're learning, from front-end tricks to back-end architecture.</p>
+</section>
 
-    {{#each posts as |post| }}
-        {{> post-info post}}
+{{#if posts.length}}
+  <div class="post-grid">
+    {{#each posts as |post|}}
+      {{> post-info post}}
     {{/each}}
-
-</article>
+  </div>
+{{else}}
+  <div class="empty">
+    <p>No posts yet.</p>
+    <a class="btn" href="/dashboard/new">Write the first one</a>
+  </div>
+{{/if}}
