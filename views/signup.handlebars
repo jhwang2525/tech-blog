@@ -1,16 +1,17 @@
-<div class="card">
-      <h3 class="card-header">Sign Up</h3>
-      <form id="signup-form" class="card-body">
-        <label for="username-signup" class="form-label">Username</label>
-        <input id="username-signup" type="text" class="form-input" />
+<form id="signup-form" class="card form auth">
+  <h1 class="form-title">Create an account</h1>
+  <p class="muted">Start publishing in under a minute.</p>
 
+  <label for="username-signup" class="form-label">Username</label>
+  <input id="username-signup" type="text" autocomplete="username" class="form-input" required />
 
-        <label class="form-label" for="password-signup">Password</label>
-        <input  id="password-signup" type="password" class="form-input" />
+  <label class="form-label" for="password-signup">Password</label>
+  <input id="password-signup" type="password" autocomplete="new-password" minlength="8" class="form-input" required />
+  <p class="hint">At least 8 characters.</p>
 
-        <button type="submit" class="btn">Signup!</button>
-        <a class="login-link" href="/login">Log in instead</a>
-      </form>
-    </div>
+  <p class="form-error" id="form-error" role="alert"></p>
+  <button type="submit" class="btn btn-block">Sign up</button>
+  <p class="muted center">Already have an account? <a href="/login">Log in</a></p>
+</form>
 
 <script src="/javascript/signup.js"></script>

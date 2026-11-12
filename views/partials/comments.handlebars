@@ -1,16 +1,14 @@
-<div class="comments">
+<section class="comments">
+  <h2 class="section-title">Comments <span class="count">{{this.length}}</span></h2>
   {{#each this}}
-    <div class="card">
-        <h3 class="card-header"></h3>
-        <section class="comment card-body">
-            <div class="text">
-                {{comment_text}}
-            </div>
-            <div class="meta">
-                -{{user.username}}, {{format_date created_at}}
-            </div>
-        </section>
-    </div>
+    <article class="comment">
+      <span class="avatar" aria-hidden="true">{{initial user.username}}</span>
+      <div>
+        <p class="comment-meta"><strong>{{user.username}}</strong> · {{format_date created_at}}</p>
+        <p class="comment-text">{{comment_text}}</p>
+      </div>
+    </article>
+  {{else}}
+    <p class="muted">No comments yet. Start the conversation.</p>
   {{/each}}
-</div>
-
+</section>

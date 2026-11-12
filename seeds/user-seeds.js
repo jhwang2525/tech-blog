@@ -2,19 +2,20 @@ const { User } = require('../models');
 
 const userData = [{
         username: 'John',
-        password: 'jkohn'
+        password: 'password123'
 
     },
     {
         username: 'Jake',
-        password: 'jake'
+        password: 'password123'
     },
     {
         username: 'Joe',
-        password: 'joe'
+        password: 'password123'
     }
 ];
 
-const seedUsers = () => User.bulkCreate(userData);
+// individualHooks runs the beforeCreate hook so seeded passwords are hashed
+const seedUsers = () => User.bulkCreate(userData, { individualHooks: true, validate: true });
 
 module.exports = seedUsers;

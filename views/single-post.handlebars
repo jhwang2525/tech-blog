@@ -1,20 +1,23 @@
-{{> post-info post}}
+<a class="back-link" href="/">← All posts</a>
 
-{{#if loggedIn}}
-<div class="card">
-    <h3 class="card-header"></h3>
-    <form class="card-body comment-form" id="comment-form">
-
-        <label class="form-label">Comment</label>
-        <input id="comment" name="comment-body" class="form-input" />
-
-        <button type="submit" class="btn">Submit</button>
-    </form>
-</div>
-{{/if}}
+<article class="card post-full">
+  <div class="post-meta">
+    <span class="avatar" aria-hidden="true">{{initial post.user.username}}</span>
+    <span><strong>{{post.user.username}}</strong> · {{format_date post.created_at}}</span>
+  </div>
+  <h1 class="post-full-title">{{post.title}}</h1>
+  <div class="post-body">{{post.content}}</div>
+</article>
 
 {{> comments post.comments}}
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+  <form class="card form comment-form" id="comment-form">
+    <label class="form-label" for="comment">Add a comment</label>
+    <textarea id="comment" name="comment-body" class="form-input" rows="3" placeholder="Share your thoughts…" required></textarea>
+    <button type="submit" class="btn">Post comment</button>
+  </form>
+  <script src="/javascript/comment.js"></script>
+{{else}}
+  <p class="card signin-prompt"><a href="/login">Log in</a> to join the discussion.</p>
 {{/if}}

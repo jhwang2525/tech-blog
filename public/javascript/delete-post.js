@@ -1,26 +1,15 @@
 async function deleteFormHandler(event) {
   event.preventDefault();
+  if (!confirm('Delete this post? This cannot be undone.')) return;
 
-  const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
-    
-    const response = await fetch(`/api/posts/${id}`, {
-      method: 'DELETE',
-      body: JSON.stringify({
-        post_id: id
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    
-    if (response.ok) {
-      document.location.replace('/dashboard/');
-    } else {
-      alert(response.statusText);
-    }
-    
+  const id = window.location.pathname.split('/').pop();
+  const response = await fetch(`/api/posts/${id}`, { method: 'DELETE' });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Could not delete the post. Please try again.');
+  }
 }
 
 document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
